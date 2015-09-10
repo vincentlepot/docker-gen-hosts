@@ -3,11 +3,13 @@
 (
 while read line
 do
-    echo "${line}"
     if [[ "${line}" =~ ^\#HOSTGEN ]]; then
         break;
     fi
+    echo "${line}"
 done < /etc/hosts
+
+echo "#HOSTGEN -- Below this line, this is automatically generated"
 
 cat hostfile | grep -Ev '^\s*$'
 
