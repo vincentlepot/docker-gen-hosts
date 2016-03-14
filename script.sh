@@ -7,14 +7,14 @@ do
         break;
     fi
     echo "${line}"
-done < /etc/hosts
+done < /generated_hostfile
 
 echo "#HOSTGEN -- Below this line, this is automatically generated"
 
-cat hostfile | grep -Ev '^\s*$'
+cat /hostfile | grep -Ev '^\s*$'
 
-) > hosts.tmp
+) > /hosts.tmp
 
-if [ -n hosts.tmp ]; then
-    cp hosts.tmp /etc/hosts
+if [ -n /hosts.tmp ]; then
+    cp /hosts.tmp /generated_hostfile
 fi
