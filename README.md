@@ -6,5 +6,5 @@ If an env variable DOMAIN_NAME is available for a container, it will be used as 
 ## Usage
 ```
 docker pull zibok/docker-gen-hosts
-docker run -d --restart=always -v /etc/hosts:/generated_hostfile -v /var/run/docker.sock:/var/run/docker.sock --name docker-gen-hosts docker-gen-hosts
+docker run -d --restart=always -v /etc/hosts:/generated_hostfile -v /var/run/docker.sock:/var/run/docker.sock --name docker-gen-hosts zibok/docker-gen-hosts
 ```
