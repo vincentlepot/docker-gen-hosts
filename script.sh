@@ -16,5 +16,5 @@ cat /hostfile | grep -Ev '^\s*$'
 ) > /hosts.tmp
 
 if [ -n /hosts.tmp ]; then
-    cp /hosts.tmp /generated_hostfile
+    cat /hosts.tmp > /generated_hostfile
 fi

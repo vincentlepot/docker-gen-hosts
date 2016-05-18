@@ -1,4 +1,6 @@
-FROM debian:jessie
+FROM alpine
+
+RUN apk add --update bash && rm -rf /var/cache/apk/*
 
 ADD ./docker-gen /docker-gen
 ADD ./script.sh /script.sh
